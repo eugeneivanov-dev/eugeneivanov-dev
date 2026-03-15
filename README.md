@@ -1,6 +1,6 @@
 # Eugene Ivanov
 
-Infrastructure and networking enthusiast documenting hands-on home lab experiments focused on Linux systems, networking, and IT infrastructure.
+Infrastructure and networking enthusiast documenting hands-on home lab experiments in Linux systems, networking, and IT operations.
 
 ---
 
@@ -10,7 +10,7 @@ Infrastructure and networking enthusiast documenting hands-on home lab experimen
 - Networking fundamentals (DNS, VLANs, VPN, firewall)
 - Infrastructure and IT operations
 - Home lab experimentation
-- Practical troubleshooting and documentation
+- Troubleshooting and technical documentation
 
 ---
 
@@ -26,7 +26,7 @@ Topics include:
 - infrastructure documentation
 - hardware setup and build process
 
-Repository:
+Repo:  
 https://github.com/eugeneivanov-dev/homelab
 
 ---
@@ -43,7 +43,7 @@ Topics include:
 - firewall configuration
 - network troubleshooting
 
-Repository:
+Repo:  
 https://github.com/eugeneivanov-dev/networking-labs
 
 ---
@@ -56,8 +56,8 @@ Current infrastructure equipment used in the lab:
 - UniFi 24 PoE Switch
 - Synology RS1221+ NAS
 - APC SMT1500RM2UC Rackmount UPS
-- 12U wall mounted rack
-- structured cabling and patch panel
+- 12U wall-mounted rack
+- Structured cabling and patch panel
 
 The lab is used for testing networking configurations, infrastructure setups, and documenting practical experiments.
 
@@ -77,9 +77,9 @@ Current learning goals include:
 
 ## Philosophy
 
-I believe the best way to understand infrastructure is through building, testing, and documenting real systems.
+I believe the best way to understand infrastructure is by building, testing, and documenting real systems.
 
-This GitHub profile documents my learning journey and practical experiments in home infrastructure and networking.
+This GitHub profile documents my practical learning journey in home infrastructure, networking, and IT operations.
 
 ---
 
