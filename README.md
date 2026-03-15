@@ -59,6 +59,8 @@ Current infrastructure equipment used in the lab:
 
 The lab is used for testing networking configurations, infrastructure setups, and documenting practical experiments.
 
+https://eugeneivanov.dev
+
 ---
 
 ## Learning Focus
