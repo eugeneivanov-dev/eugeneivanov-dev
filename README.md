@@ -9,7 +9,7 @@ Infrastructure and networking enthusiast documenting hands-on home lab experimen
 - Linux systems administration
 - Networking fundamentals (DNS, VLANs, VPN, firewall)
 - Infrastructure and IT operations
-- Home lab experimentation
+- Hands-on home lab experimentation
 - Troubleshooting and technical documentation
 
 ---
@@ -26,7 +26,6 @@ Topics include:
 - infrastructure documentation
 - hardware setup and build process
 
-Repo:  
 https://github.com/eugeneivanov-dev/homelab
 
 ---
@@ -43,7 +42,6 @@ Topics include:
 - firewall configuration
 - network troubleshooting
 
-Repo:  
 https://github.com/eugeneivanov-dev/networking-labs
 
 ---
@@ -75,9 +73,34 @@ Current learning goals include:
 
 ---
 
+## Lab Roadmap
+
+Planned experiments and infrastructure labs:
+
+- DNS server configuration and troubleshooting
+- VLAN segmentation and network isolation
+- Firewall rules and network security policies
+- VPN setup and remote access
+- Network monitoring and logging
+- Linux server administration
+- Infrastructure documentation and topology updates
+
+---
+
+## Engineering Log
+
+Recent infrastructure work and experiments:
+
+- 2026-03 — Designed and documented home lab rack infrastructure
+- 2026-03 — Created infrastructure topology and rack layout diagrams
+- 2026-03 — Deployed UniFi networking stack (UDM Pro Max, PoE switch)
+- 2026-03 — Built networking labs repository for DNS, VLAN, VPN, firewall experiments
+
+---
+
 ## Philosophy
 
-I believe the best way to understand infrastructure is by building, testing, and documenting real systems.
+I believe the best way to understand infrastructure is by building, testing, and documenting real systems in practice.
 
 This GitHub profile documents my practical learning journey in home infrastructure, networking, and IT operations.
 
