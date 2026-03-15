@@ -85,7 +85,7 @@ This GitHub profile documents my learning journey and practical experiments in h
 
 ## Links
 
-GitHub:
+GitHub  
 https://github.com/eugeneivanov-dev
 
 Website  
