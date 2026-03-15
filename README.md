@@ -108,8 +108,8 @@ This GitHub profile documents my practical learning journey in home infrastructu
 
 ## Links
 
-GitHub  
-https://github.com/eugeneivanov-dev
+LinkedIn  
+https://www.linkedin.com/in/eugeneivanov-dev
 
 Website  
 https://eugeneivanov.dev
