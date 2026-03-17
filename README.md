@@ -50,7 +50,7 @@ https://github.com/eugeneivanov-dev/networking-labs
 
 ---
 
-## Home Infrastructure Lab
+## Infrastructure Stack
 
 Current infrastructure equipment used in the lab:
 
@@ -137,9 +137,6 @@ This GitHub profile documents my practical learning journey in infrastructure en
 
 - LinkedIn - https://www.linkedin.com/in/eugeneivanov-dev
 - Website - https://eugeneivanov.dev
-
-
-### Repositories:
-
-- Home Infrastructure Lab — https://github.com/eugeneivanov-dev/homelab
-- Networking Labs — https://github.com/eugeneivanov-dev/networking-labs
+- Repositories  
+https://github.com/eugeneivanov-dev/homelab  
+https://github.com/eugeneivanov-dev/networking-labs
