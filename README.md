@@ -135,8 +135,10 @@ This GitHub profile documents my practical learning journey in infrastructure en
 
 ## Links
 
-- LinkedIn - https://www.linkedin.com/in/eugeneivanov-dev
-- Website - https://eugeneivanov.dev
+- LinkedIn  
+https://www.linkedin.com/in/eugeneivanov-dev  
+- Website  
+https://eugeneivanov.dev  
 - Repositories  
 https://github.com/eugeneivanov-dev/homelab  
 https://github.com/eugeneivanov-dev/networking-labs
