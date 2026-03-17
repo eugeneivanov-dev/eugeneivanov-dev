@@ -1,6 +1,9 @@
-# Eugene Ivanov
+## Home Infrastructure Lab
 
-Infrastructure engineering enthusiast building and documenting a real home infrastructure lab focused on networking and Linux systems.
+Designing and building a scalable home lab focused on Linux, networking, and infrastructure engineering.
+
+🔗 Website: https://eugeneivanov.dev  
+🔗 Journal: https://eugeneivanov.dev/journal/
 
 ---
 
@@ -47,7 +50,7 @@ https://github.com/eugeneivanov-dev/networking-labs
 
 ---
 
-## Home Lab Infrastructure
+## Home Infrastructure Lab
 
 Current infrastructure equipment used in the lab:
 
@@ -61,6 +64,20 @@ Current infrastructure equipment used in the lab:
 Lab documentation:
 
 https://eugeneivanov.dev/infra/
+
+---
+
+## Architecture
+
+- Single-node compute (Dell Pro Micro Plus)
+- Centralized storage (Synology NAS)
+- UniFi-based network stack (UDM Pro Max)
+- Rack-mounted power protection (APC UPS)
+
+Planned:
+- Multi-node cluster expansion
+- VLAN segmentation
+- Containerized services
 
 ---
 
@@ -93,10 +110,10 @@ Planned infrastructure experiments:
 
 Recent infrastructure work:
 
-- 2026-03 — Designed and documented home lab rack infrastructure
-- 2026-03 — Created infrastructure topology and rack layout diagrams
-- 2026-03 — Deployed UniFi network stack (UDM Pro Max, PoE switch)
-- 2026-03 — Built networking labs repository for DNS, VLAN, VPN, firewall experiments
+- 2026-03 — Designed and implemented initial rack-based infrastructure layout
+- 2026-03 — Built and documented network topology and physical rack diagram
+- 2026-03 — Deployed UniFi network stack (UDM Pro Max, PoE switching)
+- 2026-03 — Established networking lab environment for DNS, VLAN, VPN experiments
 
 ---
 
@@ -108,15 +125,21 @@ This GitHub profile documents my practical learning journey in infrastructure en
 
 ---
 
+## Key Decisions
+
+- Prioritized scalability over maximum initial specs
+- Selected modular compute approach for future cluster expansion
+- Focused on real-world infrastructure patterns over theoretical setups
+
+---
+
 ## Links
 
-LinkedIn  
-https://www.linkedin.com/in/eugeneivanov-dev
+- LinkedIn - https://www.linkedin.com/in/eugeneivanov-dev
+- Website - https://eugeneivanov.dev
 
-Website  
-https://eugeneivanov.dev
 
-Repositories:
+### Repositories:
 
-- homelab infrastructure
-- networking labs
+- Home Infrastructure Lab — https://github.com/eugeneivanov-dev/homelab
+- Networking Labs — https://github.com/eugeneivanov-dev/networking-labs
