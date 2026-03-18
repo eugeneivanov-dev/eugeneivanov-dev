@@ -3,7 +3,15 @@
 Designing and building a scalable home lab focused on Linux, networking, and infrastructure engineering.
 
 🔗 Website: https://eugeneivanov.dev  
-🔗 Journal: https://eugeneivanov.dev/journal/
+
+---
+
+## Engineering Journal
+
+- Website (structured notes): https://eugeneivanov.dev/journal/
+- GitHub (raw log): https://github.com/eugeneivanov-dev/homelab/tree/main/journal
+
+Real infrastructure work, decisions, and step-by-step implementation logs from my home lab.
 
 ---
 
@@ -29,6 +37,7 @@ Topics include:
 - networking hardware and topology
 - infrastructure documentation
 - hardware setup and deployment
+- engineering journal with real implementation logs
 
 https://github.com/eugeneivanov-dev/homelab
 
