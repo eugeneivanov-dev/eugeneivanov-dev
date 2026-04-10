@@ -82,10 +82,10 @@ https://eugeneivanov.dev/infra/
 - Centralized storage (Synology NAS)
 - UniFi-based network stack (UDM Pro Max)
 - Rack-mounted power protection (APC UPS)
+- VLAN segmentation
 
 Planned:
 - Multi-node cluster expansion
-- VLAN segmentation
 - Containerized services
 
 ---
@@ -119,10 +119,12 @@ Planned infrastructure experiments:
 
 Recent infrastructure work:
 
-- 2026-03 — Designed and implemented initial rack-based infrastructure layout
-- 2026-03 — Built and documented network topology and physical rack diagram
-- 2026-03 — Deployed UniFi network stack (UDM Pro Max, PoE switching)
-- 2026-03 — Established networking lab environment for DNS, VLAN, VPN experiments
+- 2026-03-29 — Deployed Proxmox as the first virtualization node in the lab
+- 2026-03-30 — Built and documented the initial VM-based infrastructure structure
+- 2026-04-03 — Deployed umami-vm for self-hosted analytics
+- 2026-04-06 — Deployed minecraft-vm as an isolated service workload
+- 2026-04-08 — Began expanding the lab toward a broader multi-VM infrastructure environment
+- 2026-04-10 — Planned next VM deployments for analytics, monitoring, secure access, and identity services
 
 ---
 
