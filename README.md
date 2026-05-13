@@ -1,8 +1,8 @@
 # Home Infrastructure Lab
 
-Personal infrastructure lab focused on networking, Linux, virtualization, observability, resilience, and long-term growth in infrastructure and systems engineering.
+Personal infrastructure lab focused on networking, Linux systems, virtualization, self-hosted services, observability, resilience, and long-term growth in infrastructure and systems engineering.
 
-This repository documents practical implementation work, technical decisions, lab architecture, and step-by-step infrastructure development through real projects and written engineering notes.
+This repository documents practical implementation work, technical decisions, lab architecture, troubleshooting cases, and step-by-step infrastructure development through real projects and written engineering notes.
 
 **Website:** [eugeneivanov.dev](https://eugeneivanov.dev)
 
@@ -12,7 +12,7 @@ This repository documents practical implementation work, technical decisions, la
 
 This lab is built to support steady growth in infrastructure and systems engineering through hands-on work.
 
-The focus is not on isolated experiments, but on building, documenting, troubleshooting, and improving a structured environment over time.
+The focus is not on isolated experiments, but on building, documenting, monitoring, troubleshooting, and improving a structured environment over time.
 
 The long-term direction behind this work includes:
 
@@ -21,6 +21,7 @@ The long-term direction behind this work includes:
 - operational maturity
 - resilience and service reliability
 - gradual growth toward system-level design and architecture
+- observability and alerting
 
 ---
 
@@ -28,11 +29,12 @@ The long-term direction behind this work includes:
 
 The current work in this lab is centered on:
 
-- networking and segmentation
+- networking and VLAN segmentation
 - Linux systems administration
-- virtualization with Proxmox
-- infrastructure services and observability
-- technical documentation
+- virtualization with Proxmox VE
+- Docker Compose-based self-hosted services
+- monitoring and observability with Prometheus and Grafana
+- technical documentation and validation
 - real implementation logs from the lab
 
 ---
@@ -78,14 +80,44 @@ Public journal documenting infrastructure work, decisions, experiments, and step
 
 Current infrastructure in the lab includes:
 
+### Physical Infrastructure
+
 - Ubiquiti UniFi Dream Machine Pro Max
 - UniFi Pro Max 24 PoE switch
+- UniFi Enterprise 8 PoE switch
+- 2 × UniFi Lite 8 PoE switches
+- 2 × UniFi U7 Pro access points
 - Synology RS1221+ NAS
 - APC SMT1500RM2UC rackmount UPS
 - Dell Pro Micro Plus compute node
 - 12U wall-mounted rack
 - structured Ethernet cabling and patch panel
-- Proxmox virtualization platform
+
+### Virtualization and Systems
+
+- Proxmox VE virtualization platform
+- Ubuntu Server Linux VMs
+- dedicated VMs for separated infrastructure services
+- macOS and Windows administrative environments
+
+### Network and Access
+
+- UniFi-based managed network infrastructure
+- VLAN segmentation across Main, IoT, Guest, and Lab networks
+- firewall rules for network isolation and inter-VLAN traffic control
+- Tailscale VPN for secure remote access
+- Cloudflare Tunnel for selected self-hosted services
+
+### Self-Hosted Services and Observability
+
+- Docker Compose-based service deployment
+- self-hosted analytics platforms: Umami, Plausible, and Matomo
+- Prometheus metrics collection
+- Grafana dashboards and alert rules
+- Node Exporter for Linux VM metrics
+- Blackbox Exporter for HTTP service availability checks
+- Prometheus PVE Exporter for Proxmox infrastructure metrics
+- SMTP-based email alert notifications
 
 Infrastructure documentation: [eugeneivanov.dev/infra](https://eugeneivanov.dev/infra)
 
@@ -96,22 +128,26 @@ Infrastructure documentation: [eugeneivanov.dev/infra](https://eugeneivanov.dev/
 ### Current Architecture
 
 - single-node Proxmox compute foundation
-- UniFi-based network infrastructure
+- UniFi-based managed network infrastructure
 - VLAN segmentation across the environment
 - centralized NAS storage in the lab
 - rack-mounted power protection
-- dedicated virtual machines for separated services
+- dedicated Linux VMs for separated services
+- Docker Compose-based deployment model for self-hosted services
+- secure remote access through Tailscale VPN and Cloudflare Tunnel
+- monitoring and alerting layer for Linux VMs, HTTP services, and Proxmox infrastructure
+- documented operational workflows and troubleshooting notes
 
 ### Planned Evolution
 
 - broader multi-VM service environment
-- stronger observability and service visibility
 - more repeatable operational workflows
-- expansion from 1 Proxmox node to 3 nodes
 - deeper NAS integration into infrastructure design
+- expansion from 1 Proxmox node to 3 nodes
 - more resilient clustered infrastructure
-- Kubernetes after clustering and resilience foundations
+- improved backup, restore, and validation procedures
 - stronger system-level analysis and architecture documentation
+- Kubernetes only after clustering and resilience foundations are mature
 
 ---
 
@@ -121,12 +157,12 @@ This repository supports a phased infrastructure engineering roadmap focused on 
 
 Current roadmap structure:
 
-1. Networking Foundations  
-2. Linux, Virtualization, and Core Infrastructure Systems  
-3. Infrastructure Services and Observability  
-4. Infrastructure Automation and Operational Maturity  
-5. Resilient Infrastructure, Clustering, and Kubernetes  
-6. Systems Architecture and Complex Environment Design  
+1. Networking Foundations
+2. Linux, Virtualization, and Core Infrastructure Systems
+3. Infrastructure Services and Observability
+4. Infrastructure Automation and Operational Maturity
+5. Resilient Infrastructure, Clustering, and Kubernetes
+6. Systems Architecture and Complex Environment Design
 
 The roadmap is intended to evolve as the lab grows and as deeper technical and architectural understanding develops.
 
@@ -139,10 +175,13 @@ Roadmap: [eugeneivanov.dev/roadmap](https://eugeneivanov.dev/roadmap)
 ### Completed Foundation Work
 
 - structured rack-based infrastructure layout
-- network topology and segmentation
-- UniFi-based network stack deployment
+- UniFi-based managed network stack deployment
+- network topology, VLAN segmentation, and isolation
 - Proxmox deployed as the first virtualization node
 - initial VM-based infrastructure structure established
+- Ubuntu Server VMs deployed for separated lab services
+- Docker Compose-based self-hosted services deployed
+- initial monitoring and alerting stack implemented
 
 ### Current Phase
 
@@ -150,26 +189,39 @@ Roadmap: [eugeneivanov.dev/roadmap](https://eugeneivanov.dev/roadmap)
 
 Current and near-term work includes:
 
-- self-hosted analytics services
-- monitoring and dashboards
-- secure remote access
-- identity-oriented lab services
-- service documentation and visibility
-- continued Linux administration depth
+- operating and comparing self-hosted analytics services
+- expanding monitoring coverage across Linux VMs, HTTP services, and Proxmox
+- refining Grafana dashboards and alert rules
+- validating failure detection, alert delivery, and recovery behavior
+- improving secure remote access patterns
+- strengthening service documentation and operational visibility
+- continuing Linux administration depth
+- preparing for more repeatable operational workflows
 
 ---
 
 ## Engineering Log
 
-Recent infrastructure work:
+> Recent infrastructure milestones:
 
 - 2026-03-29 — Deployed Proxmox as the first virtualization node in the lab
 - 2026-03-30 — Built and documented the initial VM-based infrastructure structure
 - 2026-04-03 — Deployed `umami-vm` for self-hosted analytics
 - 2026-04-06 — Deployed `minecraft-vm` as an isolated service workload
-- 2026-04-08 — Began expanding the lab toward a broader multi-VM infrastructure environment
 - 2026-04-10 — Updated the roadmap to reflect a clearer long-term infrastructure direction
 - 2026-04-11 — Added certification planning and a core technical reading path to the roadmap
+- 2026-05-06 — Updated the Umami analytics stack and validated real tracking data after migration
+- 2026-05-07 — Deployed Plausible Analytics as a second self-hosted analytics platform
+- 2026-05-07 — Deployed Matomo Analytics using Docker Compose and Cloudflare Tunnel
+- 2026-05-09 — Prepared a reusable Ubuntu Server VM baseline for Docker-based infrastructure services
+- 2026-05-09 — Deployed Prometheus and Grafana as the core monitoring stack
+- 2026-05-10 — Added Node Exporter monitoring for multiple Linux VMs
+- 2026-05-10 — Added Blackbox Exporter for HTTP service availability checks
+- 2026-05-10 — Added Prometheus PVE Exporter for Proxmox node, VM, and storage metrics
+- 2026-05-11 — Organized Grafana dashboards for Linux VMs, HTTP services, and Proxmox infrastructure
+- 2026-05-11 — Configured Grafana alert rules and SMTP email notifications
+- 2026-05-11 — Published a high-level overview of the self-hosted observability stack
+- 2026-05-12 — Investigated a Grafana memory alert and tuned the Proxmox memory alert threshold
 
 ---
 
