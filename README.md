@@ -26,8 +26,8 @@ The broader phase remains *Infrastructure Services and Observability* — the co
 
 ## Repositories
 
-### homelab — Engineering Journal and Lab Documentation
-The main public repository for this work. Contains the engineering journal — implementation logs, troubleshooting cases, configuration notes, and technical decisions from real lab work — along with documentation of the lab architecture and photos.
+### homelab — Engineering Journal
+The main public repository for this work. Contains a working engineering journal — implementation logs, troubleshooting notes, and technical decisions captured during real lab work. The polished, published version of the journal lives on the website; this repository is the working record.
 
 Repository: [github.com/eugeneivanov-dev/homelab](https://github.com/eugeneivanov-dev/homelab)  
 Published journal: [eugeneivanov.dev/journal](https://eugeneivanov.dev/journal)
@@ -37,51 +37,35 @@ A separate repository scoped for hands-on networking exercises — DNS, VLAN seg
 
 Repository: [github.com/eugeneivanov-dev/networking-labs](https://github.com/eugeneivanov-dev/networking-labs)
 
-
 ---
 
 ## Infrastructure Stack
 
-Current infrastructure in the lab includes:
+The physical and virtual environment behind the work documented here — actively running, not theoretical.
 
-### Physical Infrastructure
+### Network
 
-- Ubiquiti UniFi Dream Machine Pro Max
-- UniFi Pro Max 24 PoE switch
-- UniFi Enterprise 8 PoE switch
-- 2 × UniFi Lite 8 PoE switches
+- UniFi Dream Machine Pro Max (gateway and firewall)
+- UniFi Pro Max 24 PoE (core switch)
+- UniFi Enterprise 8 PoE (10G uplink)
+- 2 × UniFi Lite 8 PoE (distribution)
 - 2 × UniFi U7 Pro access points
-- Synology RS1221+ NAS
-- APC SMT1500RM2UC rackmount UPS
-- Dell Pro Micro Plus compute node
-- 12U wall-mounted rack
-- structured Ethernet cabling and patch panel
 
-### Virtualization and Systems
+### Compute and storage
 
-- Proxmox VE virtualization platform
-- Ubuntu Server Linux VMs
-- dedicated VMs for separated infrastructure services
+- Dell Pro Micro Plus — Intel Core Ultra 7, 64 GB RAM, 1 TB + 2 TB NVMe (Proxmox VE node)
+- Synology RS1221+ (rack-mounted NAS, backup and storage)
+- APC rack-mounted UPS
+- 12U wall-mounted rack with structured Ethernet cabling and patch panel
+
+### Platform layer
+
+- Proxmox VE virtualization with multiple Ubuntu Server VMs
+- Docker Compose for self-hosted services (Umami, Plausible, Matomo, internal tooling)
+- Tailscale VPN and Cloudflare Tunnel for secure remote access
+- Prometheus, Grafana, Node Exporter, Blackbox Exporter, and Proxmox PVE Exporter
+- VLAN-based network segmentation across Main, IoT, Guest, Lab, and Quarantine
 - macOS and Windows administrative environments
-
-### Network and Access
-
-- UniFi-based managed network infrastructure
-- VLAN segmentation across Main, IoT, Guest, and Lab networks
-- firewall rules for network isolation and inter-VLAN traffic control
-- Tailscale VPN for secure remote access
-- Cloudflare Tunnel for selected self-hosted services
-
-### Self-Hosted Services and Observability
-
-- Docker Compose-based service deployment
-- self-hosted analytics platforms: Umami, Plausible, and Matomo
-- Prometheus metrics collection
-- Grafana dashboards and alert rules
-- Node Exporter for Linux VM metrics
-- Blackbox Exporter for HTTP service availability checks
-- Prometheus PVE Exporter for Proxmox infrastructure metrics
-- SMTP-based email alert notifications
 
 Infrastructure documentation: [eugeneivanov.dev/infra](https://eugeneivanov.dev/infra)
 
@@ -89,155 +73,131 @@ Infrastructure documentation: [eugeneivanov.dev/infra](https://eugeneivanov.dev/
 
 ## Architecture
 
-### Current Architecture
+### Current
 
-- single-node Proxmox compute foundation
-- UniFi-based managed network infrastructure
-- VLAN segmentation across the environment
-- centralized NAS storage in the lab
-- rack-mounted power protection
-- dedicated Linux VMs for separated services
-- Docker Compose-based deployment model for self-hosted services
-- secure remote access through Tailscale VPN and Cloudflare Tunnel
-- monitoring and alerting layer for Linux VMs, HTTP services, and Proxmox infrastructure
-- documented operational workflows and troubleshooting notes
+Single-node Proxmox foundation running multiple Linux VMs, with VLAN-segmented UniFi networking, centralized NAS storage, rack-mounted power protection, and a monitoring layer covering VMs, HTTP services, and Proxmox infrastructure. Secure remote access through Tailscale and Cloudflare Tunnel. Operational workflows and troubleshooting documented as part of the work.
 
 ### Planned Evolution
 
-- broader multi-VM service environment
-- more repeatable operational workflows
-- deeper NAS integration into infrastructure design
-- expansion from 1 Proxmox node to 3 nodes
-- more resilient clustered infrastructure
-- improved backup, restore, and validation procedures
-- stronger system-level analysis and architecture documentation
-- Kubernetes only after clustering and resilience foundations are mature
+- Expansion from 1 Proxmox node to 3 nodes for high availability
+- Deeper NAS integration as shared storage for the cluster
+- Stronger backup, restore, and recovery validation procedures
+- Automation through Ansible, then infrastructure-as-code with Terraform
+- Cloud integration once the on-prem foundation is mature
+- Kubernetes only after clustering and resilience foundations are in place
 
 ---
 
 ## Roadmap
 
-This repository supports a phased infrastructure engineering roadmap focused on practical growth over time.
+The work in this lab follows a phased infrastructure engineering roadmap. Each phase has an honest status — what is operational, what is deepening, what is still ahead.
 
-Current roadmap structure:
+1. **Networking Foundations** — *Core complete · deepening (CCNA in progress)*
+2. **Linux & Virtualization** — *Core complete · deepening (RHCSA ahead)*
+3. **Infrastructure Services & Observability** — *Core complete · expanding*
+4. **Automation & Operational Maturity** — *In progress*
+5. **Resilient Infrastructure, Clustering & Kubernetes** — *Future*
+6. **Systems Architecture** — *Future*
 
-1. Networking Foundations
-2. Linux, Virtualization, and Core Infrastructure Systems
-3. Infrastructure Services and Observability
-4. Infrastructure Automation and Operational Maturity
-5. Resilient Infrastructure, Clustering, and Kubernetes
-6. Systems Architecture and Complex Environment Design
-
-The roadmap is intended to evolve as the lab grows and as deeper technical and architectural understanding develops.
-
-Roadmap: [eugeneivanov.dev/roadmap](https://eugeneivanov.dev/roadmap)
+Full roadmap with details, principles, and certifications: [eugeneivanov.dev/roadmap](https://eugeneivanov.dev/roadmap)
 
 ---
 
 ## Current Status
 
-### Completed Foundation Work
+### Phase status
 
-- structured rack-based infrastructure layout
-- UniFi-based managed network stack deployment
-- network topology, VLAN segmentation, and isolation
-- Proxmox deployed as the first virtualization node
-- initial VM-based infrastructure structure established
-- Ubuntu Server VMs deployed for separated lab services
-- Docker Compose-based self-hosted services deployed
-- initial monitoring and alerting stack implemented
+- **Networking Foundations** — core complete, deepening through CCNA
+- **Linux & Virtualization** — core complete, deepening alongside RHCSA preparation
+- **Infrastructure Services & Observability** — core complete, expanding coverage and refining behavior
+- **Automation & Operational Maturity** — in progress
 
-### Current Phase
+### What this means in practice
 
-**Infrastructure Services and Observability**
-
-Current and near-term work includes:
-
-- operating and comparing self-hosted analytics services
-- expanding monitoring coverage across Linux VMs, HTTP services, and Proxmox
-- refining Grafana dashboards and alert rules
-- validating failure detection, alert delivery, and recovery behavior
-- improving secure remote access patterns
-- strengthening service documentation and operational visibility
-- continuing Linux administration depth
-- preparing for more repeatable operational workflows
+Recent and near-term work centers on extending the observability stack (new metrics, sharper alert thresholds, validated failure paths), preparing the next service layer (internal DNS, NetBox as a source of truth, self-hosted VPN through WireGuard), and beginning the move from manual workflows to repeatable ones — light automation today, Ansible next.
 
 ---
 
 ## Engineering Log
 
-> Recent infrastructure milestones:
+> Recent infrastructure work:
 
-- 2026-03-29 — Deployed Proxmox as the first virtualization node in the lab
-- 2026-03-30 — Built and documented the initial VM-based infrastructure structure
-- 2026-04-03 — Deployed `umami-vm` for self-hosted analytics
-- 2026-04-06 — Deployed `minecraft-vm` as an isolated service workload
-- 2026-04-10 — Updated the roadmap to reflect a clearer long-term infrastructure direction
-- 2026-04-11 — Added certification planning and a core technical reading path to the roadmap
-- 2026-05-06 — Updated the Umami analytics stack and validated real tracking data after migration
-- 2026-05-07 — Deployed Plausible Analytics as a second self-hosted analytics platform
-- 2026-05-07 — Deployed Matomo Analytics using Docker Compose and Cloudflare Tunnel
-- 2026-05-09 — Prepared a reusable Ubuntu Server VM baseline for Docker-based infrastructure services
-- 2026-05-09 — Deployed Prometheus and Grafana as the core monitoring stack
-- 2026-05-10 — Added Node Exporter monitoring for multiple Linux VMs
-- 2026-05-10 — Added Blackbox Exporter for HTTP service availability checks
-- 2026-05-10 — Added Prometheus PVE Exporter for Proxmox node, VM, and storage metrics
-- 2026-05-11 — Organized Grafana dashboards for Linux VMs, HTTP services, and Proxmox infrastructure
-- 2026-05-11 — Configured Grafana alert rules and SMTP email notifications
-- 2026-05-11 — Published a high-level overview of the self-hosted observability stack
-- 2026-05-12 — Investigated a Grafana memory alert and tuned the Proxmox memory alert threshold
+- 2026-05-25 — Resolved recurring GitHub SSH authentication prompts
+- 2026-05-22 — Upgraded Proxmox VE from 9.1 to 9.2.2 with documented validation
+- 2026-05-20 — Built a cross-platform Unity workspace for a beginner C# programmer
+- 2026-05-12 — Investigated noisy Grafana memory alerts and tuned the Proxmox memory threshold
+- 2026-05-11 — Published the self-hosted observability stack overview
+- 2026-05-11 — Configured Grafana alert rules with Proton SMTP email notifications
+- 2026-05-11 — Organized Grafana dashboards by layer (VMs, services, Proxmox)
+- 2026-05-10 — Added Node, Blackbox, and PVE exporters covering Linux VMs, HTTP services, and Proxmox infrastructure
+- 2026-05-09 — Deployed Prometheus and Grafana on a dedicated monitoring VM
+- 2026-05-09 — Prepared a reusable Ubuntu Server VM baseline for Docker infrastructure
+
+Full chronology of journal entries, troubleshooting cases, and lab notes: [eugeneivanov.dev/journal](https://eugeneivanov.dev/journal)
 
 ---
 
 ## Certification Direction
 
-Certifications are treated here as supporting checkpoints for structured learning and gap identification, not as the center of the lab.
+Certifications are treated as checkpoints along the work, not the work itself. Each one validates real practice rather than driving it.
 
-Current certification direction:
-
-- CCNA
-- RHCSA or LFCS
-- CKA later, after clustering and Kubernetes work
-- one cloud certification only if it becomes directly relevant to real work
+- **CCNA** — in progress (Cisco Networking Academy)
+- **RHCSA** — next, alongside continued Linux administration depth
+- **CKA** — later, only after clustering and Kubernetes work is real
+- **One cloud certification** — only if it becomes directly relevant to real work
 
 ---
 
 ## Core Reading Library
 
-Books are part of the long-term learning foundation behind this lab.
+Books support the long-term foundation behind this lab. They deepen understanding over time but do not replace real implementation, troubleshooting, or documentation.
 
-Current reading path:
+### Currently reading
 
-1. *Computer Networking: A Top-Down Approach*  
-2. *UNIX and Linux System Administration Handbook*  
-3. *The Practice of System and Network Administration*  
-4. *Site Reliability Engineering*  
-5. *The Site Reliability Workbook*  
-6. *Building Secure and Reliable Systems*  
-7. *Designing Data-Intensive Applications*  
-8. *TCP/IP Illustrated, Volume 1*  
+- *CCNA 200-301 Official Cert Guide, Volume 1&2*, 2nd Edition — Wendell Odom
+- *CCNA 200-301 Hands-on Mastery with Packet Tracer* — Sequeira & Wong
+- *Acing the CCNA Exam, Volume 1&2* — Jeremy McDowell
+- *31 Days Before Your CCNA Exam*
 
-These books support deeper systems understanding over time, but they do not replace real implementation, troubleshooting, documentation, or system design work.
+### On the shelf (long-term reading path)
+
+- *Computer Networking: A Top-Down Approach* — Kurose & Ross
+- *TCP/IP Illustrated, Volume 1* — Fall & Stevens
+- *UNIX and Linux System Administration Handbook* — Nemeth et al.
+- *The Practice of System and Network Administration* — Limoncelli et al.
+- *Site Reliability Engineering* — Google
+- *The Site Reliability Workbook* — Google
+- *Building Secure and Reliable Systems* — Google
+- *Designing Data-Intensive Applications* — Martin Kleppmann
+- *The Pragmatic Programmer*
+- *Pro Git*
+- *Linux Bible*
+- *Automate the Boring Stuff with Python* — Al Sweigart
+- *The Linux Command Line* — William Shotts
+- *Practical Packet Analysis* — Chris Sanders
 
 ---
 
 ## Philosophy
 
-The best way to understand infrastructure is by building, testing, documenting, and improving real systems.
+**Working principle:**  
+be current · do the work · document the process.
 
-This lab is designed to make technical growth visible through implementation, troubleshooting, structure, and written engineering documentation.
+The best way to understand infrastructure is to build, operate, break, and repair real systems — then write down what happened. Theory matters, but understanding is built through implementation, troubleshooting, and the discipline of documenting decisions while they are still fresh.
 
-The goal is not only to make systems work, but to understand how they are organized, how they behave, how they fail, and how they can be improved over time.
+The goal is not only to make systems work, but to understand how they are organized, how they behave, how they fail, and how they improve over time.
 
 ---
 
 ## Key Decisions
 
-- prioritized scalable physical infrastructure from the beginning
-- selected modular compute as a foundation for future expansion
-- focused on real infrastructure patterns over purely theoretical setups
-- treated documentation as part of engineering work, not as an afterthought
-- used the lab as a long-term environment for practical infrastructure growth
+- **Built physical infrastructure first** — rack, structured cabling, patch panel, and UPS from day one, so everything above the physical layer sits on a stable foundation
+- **Chose Proxmox VE as the virtualization platform** — open-source, snapshots and backups out of the box, single pane for VMs and storage, and a clear path to clustering when the time comes
+- **Started with a single capable compute node** — Dell Pro Micro Plus with Intel Ultra 7, 64 GB RAM, and dual NVMe — strong enough to host real workloads now, modular enough to grow into a 3-node cluster later
+- **Standardized on UniFi for the network stack** — consistent management, integrated VLANs and firewall policy, room to grow without changing vendors mid-build
+- **Designed VLAN segmentation with five separate networks** — including a Quarantine VLAN for unknown or untrusted devices, treating segmentation as boundaries of trust, not just address ranges
+- **Built secure remote access through Tailscale and Cloudflare Tunnel** — no open inbound ports on the home network, role-based access through ACLs
+- **Treated documentation as part of the work, not after it** — every meaningful change captured in the engineering journal while the context is still fresh
 
 ---
 
