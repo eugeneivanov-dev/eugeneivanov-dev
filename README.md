@@ -1,8 +1,8 @@
 # Home Infrastructure Lab
 
-Personal infrastructure lab focused on networking, Linux systems, virtualization, self-hosted services, observability, resilience, and long-term growth in infrastructure and systems engineering.
+A hands-on infrastructure lab where I build, operate, and document real systems — networking, Linux, virtualization, observability, and methodical troubleshooting on real hardware.
 
-This repository documents practical implementation work, technical decisions, lab architecture, troubleshooting cases, and step-by-step infrastructure development through real projects and written engineering notes.
+This repository documents the lab end-to-end: architecture, implementation logs, technical decisions, troubleshooting cases, and engineering notes from real work.
 
 **Website:** [eugeneivanov.dev](https://eugeneivanov.dev)
 
@@ -10,69 +10,33 @@ This repository documents practical implementation work, technical decisions, la
 
 ## Overview
 
-This lab is built to support steady growth in infrastructure and systems engineering through hands-on work.
+The lab is the practical foundation behind a longer engineering path — a place to develop hands-on skills, document them honestly, and extend them as experience grows. The focus is on building, operating, and improving a real environment over time, not on isolated experiments.
 
-The focus is not on isolated experiments, but on building, documenting, monitoring, troubleshooting, and improving a structured environment over time.
-
-The long-term direction behind this work includes:
-
-- practical infrastructure implementation
-- stronger systems thinking
-- operational maturity
-- resilience and service reliability
-- gradual growth toward system-level design and architecture
-- observability and alerting
+The long-term direction moves through networking depth, Linux and virtualization, infrastructure services and observability, operational maturity, resilience, and system-level design — laid out in the [roadmap](https://eugeneivanov.dev/roadmap).
 
 ---
 
 ## Current Focus
 
-The current work in this lab is centered on:
+Right now the work centers on three things: networking depth (CCNA in progress), continuing to expand and refine the observability stack, and preparing the next layer of services — internal DNS, NetBox as a source of truth, and self-hosted VPN through WireGuard.
 
-- networking and VLAN segmentation
-- Linux systems administration
-- virtualization with Proxmox VE
-- Docker Compose-based self-hosted services
-- monitoring and observability with Prometheus and Grafana
-- technical documentation and validation
-- real implementation logs from the lab
+The broader phase remains *Infrastructure Services and Observability* — the core is operational, and the work is extending it.
 
 ---
 
 ## Repositories
 
-### Home Infrastructure Lab
-Repository documenting the build-out and evolution of a personal infrastructure lab.
+### homelab — Engineering Journal and Lab Documentation
+The main public repository for this work. Contains the engineering journal — implementation logs, troubleshooting cases, configuration notes, and technical decisions from real lab work — along with documentation of the lab architecture and photos.
 
-Topics include:
+Repository: [github.com/eugeneivanov-dev/homelab](https://github.com/eugeneivanov-dev/homelab)  
+Published journal: [eugeneivanov.dev/journal](https://eugeneivanov.dev/journal)
 
-- rack layout and infrastructure design
-- network hardware and topology
-- virtualization platform build-out
-- infrastructure documentation
-- hardware setup and deployment
-- engineering journal entries with implementation logs
-
-Repository: [github.com/eugeneivanov-dev/homelab](https://github.com/eugeneivanov-dev/homelab)
-
-### Networking Labs
-Hands-on networking experiments focused on real infrastructure scenarios.
-
-Topics include:
-
-- DNS configuration and troubleshooting
-- VLAN networking and segmentation
-- VPN setup and secure remote access
-- firewall policy logic
-- network troubleshooting and validation
+### networking-labs — Networking Experiments (Early Stage)
+A separate repository scoped for hands-on networking exercises — DNS, VLAN segmentation, VPN, firewall configuration, and network troubleshooting. Currently early-stage, with active development planned alongside CCNA preparation.
 
 Repository: [github.com/eugeneivanov-dev/networking-labs](https://github.com/eugeneivanov-dev/networking-labs)
 
-### Engineering Journal
-Public journal documenting infrastructure work, decisions, experiments, and step-by-step implementation logs from the lab.
-
-- Website: [eugeneivanov.dev/journal](https://eugeneivanov.dev/journal)
-- GitHub: [github.com/eugeneivanov-dev/homelab/tree/main/journal](https://github.com/eugeneivanov-dev/homelab/tree/main/journal)
 
 ---
 
