@@ -32,8 +32,8 @@ The broader phase remains *Infrastructure Services and Observability* — the co
 The main public repository for this work. Contains a working engineering journal — implementation logs, troubleshooting notes, and technical decisions captured during real lab work. The polished, published version of the journal lives on the website; this repository is the working record.
 
 Repository: [github.com/eugeneivanov-dev/homelab](https://github.com/eugeneivanov-dev/homelab)  
-Published journal: [eugeneivanov.dev/journal](https://eugeneivanov.dev/journal)
-Published RAW journal: [github.com/eugeneivanov-dev/homelabl/journal/readme.md](https://github.com/eugeneivanov-dev/homelab/journal/readme.md)
+Published journal: [eugeneivanov.dev/journal](https://eugeneivanov.dev/journal)  
+Published RAW journal: [github.com/eugeneivanov-dev/homelabl/journal/readme.md](https://github.com/eugeneivanov-dev/homelab/journal/README.md)
 
 ### networking-labs — Networking Experiments (Early Stage)
 A separate repository scoped for hands-on networking exercises — DNS, VLAN segmentation, VPN, firewall configuration, and network troubleshooting. Currently early-stage, with active development planned alongside CCNA preparation.
