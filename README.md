@@ -33,7 +33,7 @@ The main public repository for this work. Contains a working engineering journal
 
 Repository: [github.com/eugeneivanov-dev/homelab](https://github.com/eugeneivanov-dev/homelab)  
 Published journal: [eugeneivanov.dev/journal](https://eugeneivanov.dev/journal)  
-Published RAW journal: [github.com/eugeneivanov-dev/homelabl/journal/readme.md](https://github.com/eugeneivanov-dev/homelab/journal/README.md)
+Published RAW journal: [github.com/eugeneivanov-dev/homelabl/journal/README.md](https://github.com/eugeneivanov-dev/homelab/blob/main/journal/README.md)
 
 ### networking-labs — Networking Experiments (Early Stage)
 A separate repository scoped for hands-on networking exercises — DNS, VLAN segmentation, VPN, firewall configuration, and network troubleshooting. Currently early-stage, with active development planned alongside CCNA preparation.
