@@ -1,3 +1,5 @@
+[![eugeneivanov.dev — Infrastructure Engineering](assets/eugeneivanov-dev-logo_1280.webp)](https://eugeneivanov.dev)
+
 # Home Infrastructure Lab
 
 A hands-on infrastructure lab where I build, operate, and document real systems — networking, Linux, virtualization, observability, and methodical troubleshooting on real hardware.
@@ -31,6 +33,7 @@ The main public repository for this work. Contains a working engineering journal
 
 Repository: [github.com/eugeneivanov-dev/homelab](https://github.com/eugeneivanov-dev/homelab)  
 Published journal: [eugeneivanov.dev/journal](https://eugeneivanov.dev/journal)
+Published RAW journal: [github.com/eugeneivanov-dev/homelabl/journal/readme.md](https://github.com/eugeneivanov-dev/homelab/journal/readme.md)
 
 ### networking-labs — Networking Experiments (Early Stage)
 A separate repository scoped for hands-on networking exercises — DNS, VLAN segmentation, VPN, firewall configuration, and network troubleshooting. Currently early-stage, with active development planned alongside CCNA preparation.
@@ -122,6 +125,10 @@ Recent and near-term work centers on extending the observability stack (new metr
 
 > Recent infrastructure work:
 
+- 2026-06-06 - Fixing a Phantom “Unknown Error” on a Cisco 8861 MPP Phone
+- 2026-06-05 - Self-hosted newsletter is live
+- 2026-06-01 - Self-Hosted Website Audits with SiteOne Crawler and systemd
+- 2026-05-31 - Improved Proxmox Grafana dashboard readability
 - 2026-05-25 — Resolved recurring GitHub SSH authentication prompts
 - 2026-05-22 — Upgraded Proxmox VE from 9.1 to 9.2.2 with documented validation
 - 2026-05-20 — Built a cross-platform Unity workspace for a beginner C# programmer
