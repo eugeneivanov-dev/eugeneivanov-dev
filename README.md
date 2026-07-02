@@ -20,7 +20,7 @@ The long-term direction moves through networking depth, Linux and virtualization
 
 ## Current Focus
 
-Right now the work centers on: Linux administration depth (RHCSA in progress), operating and refining the two-node high-availability cluster, continuing to expand the observability stack, and preparing the next service layer — internal DNS and NetBox as a source of truth.
+Right now the work centers on: networking depth (CCNA in progress, with live Cisco IOS practice in a CML lab on the cluster), operating and refining the two-node high-availability cluster, continuing to expand the observability stack, and preparing the next service layer — internal DNS and NetBox as a source of truth. RHCSA follows once CCNA is done, alongside continued Linux administration depth.
 
 The broader phase remains *Infrastructure Services and Observability* — the core is operational, and the work is extending it.
 
@@ -36,7 +36,7 @@ Published journal: [eugeneivanov.dev/journal](https://eugeneivanov.dev/journal)
 Published RAW journal: [github.com/eugeneivanov-dev/homelab/journal/README.md](https://github.com/eugeneivanov-dev/homelab/blob/main/journal/README.md)
 
 ### networking-labs — Networking Experiments (Early Stage)
-A separate repository scoped for hands-on networking exercises — DNS, VLAN segmentation, VPN, firewall configuration, and network troubleshooting. Currently early-stage, with active development planned alongside continued networking depth.
+A separate repository scoped for hands-on networking exercises — DNS, VLAN segmentation, VPN, firewall configuration, and network troubleshooting. Currently early-stage, with active development planned alongside CCNA preparation.
 
 Repository: [github.com/eugeneivanov-dev/networking-labs](https://github.com/eugeneivanov-dev/networking-labs)
 
@@ -66,6 +66,7 @@ The physical and virtual environment behind the work documented here — activel
 - Proxmox VE two-node high-availability cluster on ZFS, with bidirectional replication and watchdog fencing
 - External QDevice (corosync-qnetd) on Synology as a third quorum vote
 - RHEL 10 and Ubuntu Server VMs
+- Cisco Modeling Labs (CML) as an on-demand VM — live Cisco IOS network topologies via nested virtualization
 - Docker Compose for self-hosted services (Umami, Plausible, Matomo, Listmonk, internal tooling)
 - WireGuard (deny-by-default), Tailscale, and Cloudflare Tunnel for secure remote access
 - Prometheus, Grafana, Node Exporter, Blackbox Exporter, and Proxmox PVE Exporter
@@ -81,7 +82,7 @@ Infrastructure documentation: [eugeneivanov.dev/infra](https://eugeneivanov.dev/
 
 ### Current
 
-Two-node Proxmox VE high-availability cluster on ZFS with bidirectional replication and an external QDevice for quorum, running RHEL 10 and Ubuntu VMs. VLAN-segmented UniFi networking, centralized NAS storage, rack-mounted power protection, and a monitoring layer covering VMs, HTTP services, and Proxmox infrastructure. Off-node backups verified by real restores. Secure remote access through WireGuard, Tailscale, and Cloudflare Tunnel. Operational workflows and troubleshooting documented as part of the work.
+Two-node Proxmox VE high-availability cluster on ZFS with bidirectional replication and an external QDevice for quorum, running RHEL 10 and Ubuntu VMs. VLAN-segmented UniFi networking, centralized NAS storage, rack-mounted power protection, and a monitoring layer covering VMs, HTTP services, and Proxmox infrastructure. Off-node backups verified by real restores. Secure remote access through WireGuard, Tailscale, and Cloudflare Tunnel. A CML network lab runs as an on-demand, non-HA guest for live Cisco IOS practice. Operational workflows and troubleshooting documented as part of the work.
 
 ### Planned Evolution
 
@@ -98,8 +99,8 @@ Two-node Proxmox VE high-availability cluster on ZFS with bidirectional replicat
 
 The work in this lab follows a phased infrastructure engineering roadmap. Each phase has an honest status — what is operational, what is deepening, what is still ahead.
 
-1. **Networking Foundations** — *Core complete · deepening*
-2. **Linux & Virtualization** — *Core complete · deepening (RHCSA in progress)*
+1. **Networking Foundations** — *Core complete · deepening (CCNA in progress)*
+2. **Linux & Virtualization** — *Core complete · deepening (RHCSA ahead)*
 3. **Infrastructure Services & Observability** — *Core complete · expanding*
 4. **Automation & Operational Maturity** — *Early · in progress*
 5. **Resilient Infrastructure, Clustering & Kubernetes** — *Clustering & HA operational (two-node) · third node and Kubernetes ahead*
@@ -113,15 +114,15 @@ Full roadmap with details, principles, and certifications: [eugeneivanov.dev/roa
 
 ### Phase status
 
-- **Networking Foundations** — core complete, deepening
-- **Linux & Virtualization** — core complete, deepening alongside RHCSA preparation
+- **Networking Foundations** — core complete, deepening through CCNA with live Cisco IOS labs in CML
+- **Linux & Virtualization** — core complete, deepening; RHCSA follows CCNA
 - **Infrastructure Services & Observability** — core complete, expanding coverage and refining behavior
 - **Automation & Operational Maturity** — early, in progress
 - **Resilient Infrastructure & Clustering** — two-node HA cluster operational; third node and Kubernetes ahead
 
 ### What this means in practice
 
-Recent work rebuilt the compute layer from a single node into a two-node high-availability cluster on ZFS replication — with an external QDevice for quorum, off-node backups and a logical database-dump layer both verified by restore, a live in-place node rebuild without downtime, and a hard power-off failover test that proved automatic recovery. Near-term work centers on extending the observability stack, preparing the next service layer (internal DNS, NetBox as a source of truth), and beginning the move from manual workflows to repeatable ones — light automation today, Ansible next.
+Recent work rebuilt the compute layer from a single node into a two-node high-availability cluster on ZFS replication — with an external QDevice for quorum, off-node backups and a logical database-dump layer both verified by restore, a live in-place node rebuild without downtime, and a hard power-off failover test that proved automatic recovery. On top of that platform, a Cisco Modeling Labs instance now runs as an on-demand VM for hands-on Layer 3 work on real Cisco IOS — the practice side of CCNA preparation. Near-term work centers on CCNA, extending the observability stack, and preparing the next service layer (internal DNS, NetBox as a source of truth), with light automation today and Ansible next.
 
 ---
 
@@ -129,6 +130,7 @@ Recent work rebuilt the compute layer from a single node into a two-node high-av
 
 > Recent infrastructure work:
 
+- 2026-07-02 — Installing Cisco Modeling Labs on Proxmox from the OVA
 - 2026-06-27 — When a node reinstall resurfaced an old NIC hang — and HA caught it
 - 2026-06-25 — Deny-by-default WireGuard server on RHEL 10 with firewalld policies
 - 2026-06-24 — Built a reusable RHEL 10 baseline for homelab services
@@ -164,8 +166,8 @@ Full chronology of journal entries, troubleshooting cases, and lab notes: [eugen
 
 Certifications are treated as checkpoints along the work, not the work itself. Each one validates real practice rather than driving it.
 
-- **RHCSA** — in progress (RHEL 10 / EX200), the current focus alongside continued Linux administration depth
-- **CCNA** — on hold; resumed if a networking-specific path calls for it
+- **CCNA** — in progress, the current focus — Cisco U course with live IOS practice in a CML lab on the cluster
+- **RHCSA** — next (RHEL 10 / EX200), alongside continued Linux administration depth
 - **CKA** — later, only after Kubernetes work is real
 - **One cloud certification** — only if it becomes directly relevant to real work
 
@@ -177,11 +179,11 @@ Books support the long-term foundation behind this lab. They deepen understandin
 
 ### Currently reading
 
-- *Red Hat RHCSA 10 Cert Guide: EX200* — Sander van Vugt
 - *CCNA 200-301 Official Cert Guide, Volume 1 & 2*, 2nd Edition — Wendell Odom
 - *CCNA 200-301 Hands-on Mastery with Packet Tracer* — Sequeira & Wong
 - *Acing the CCNA Exam, Volume 1 & 2* — Jeremy McDowell
 - *31 Days Before Your CCNA Exam*
+- *Red Hat RHCSA 10 Cert Guide: EX200* — Sander van Vugt
 
 ### On the shelf (long-term reading path)
 
@@ -222,6 +224,7 @@ The goal is not only to make systems work, but to understand how they are organi
 - **Standardized on UniFi for the network stack** — consistent management, integrated VLANs and firewall policy, room to grow without changing vendors mid-build
 - **Designed VLAN segmentation with seven separate networks** — including a Quarantine VLAN for unknown or untrusted devices, treating segmentation as boundaries of trust, not just address ranges
 - **Built secure remote access through WireGuard, Tailscale, and Cloudflare Tunnel** — no open inbound ports beyond a single hardened WireGuard endpoint, with deny-by-default, per-peer access enforced in firewalld
+- **Ran the Cisco network lab as an emulator, not more hardware** — CML on the existing cluster as an on-demand, non-HA VM: real IOS for Layer 3 practice, no new boxes, and no resources held while idle
 - **Treated documentation as part of the work, not after it** — every meaningful change captured in the engineering journal while the context is still fresh
 
 ---
