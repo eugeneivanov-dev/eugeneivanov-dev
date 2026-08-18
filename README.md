@@ -1,8 +1,8 @@
 [![eugeneivanov.dev — Infrastructure Engineering](assets/eugeneivanov-dev-logo_1280.webp)](https://eugeneivanov.dev)
 
-# Home Infrastructure Lab
+# Infrastructure Lab
 
-A working infrastructure environment I build, operate, and document — networking, Linux, virtualization, high availability, PKI, observability, and configuration management on real hardware.
+A working infrastructure environment I build, operate, and document — networking, Linux, virtualization, high availability, PKI, observability, and configuration management on real hardware. This lab is the engineering base behind [Proven Infrastructure Group](https://proveninfra.com): methods are rehearsed here before they touch client production.
 
 **Website:** [eugeneivanov.dev](https://eugeneivanov.dev)
 
@@ -18,6 +18,8 @@ A working infrastructure environment I build, operate, and document — networki
 - Seven VLANs with deny-by-default inter-VLAN firewall policy; WireGuard, Tailscale, and Cloudflare Tunnel for remote access
 - Off-node backups (Proxmox vzdump) and logical database dumps, both verified by real restores
 - Self-hosted services on Docker Compose: analytics, newsletter, internal tooling
+
+Next up: identity and secrets services — FreeIPA, Keycloak, HashiCorp Vault.
 
 ## Hardware
 
@@ -37,11 +39,11 @@ The lab's OS baseline as code. Two fleets — RHEL and Ubuntu — as fleet-prefi
 
 Project pages: [Ansible Baseline](https://eugeneivanov.dev/projects/ansible-baseline-for-the-lab/) · [Ubuntu Baseline](https://eugeneivanov.dev/projects/ubuntu-baseline-for-the-lab/)
 
-### [homelab](https://github.com/eugeneivanov-dev/homelab)
+### [infralab](https://github.com/eugeneivanov-dev/infralab)
 The engineering journal — implementation logs, troubleshooting cases, and technical decisions from real lab work. The polished version lives on the website; this repository is the working record.
 
 Published journal: [eugeneivanov.dev/journal](https://eugeneivanov.dev/journal)  
-Raw journal: [journal/README.md](https://github.com/eugeneivanov-dev/homelab/blob/main/journal/README.md)
+Raw journal: [journal/README.md](https://github.com/eugeneivanov-dev/infralab/blob/main/journal/README.md)
 
 ---
 
@@ -61,32 +63,9 @@ Full chronology: [eugeneivanov.dev/journal](https://eugeneivanov.dev/journal)
 
 ---
 
-## Roadmap
-
-1. **Networking Foundations** — core complete, deepening
-2. **Linux & Virtualization** — core complete, deepening
-3. **Infrastructure Services & Observability** — core complete, expanding (identity and secrets services next)
-4. **Automation & Operational Maturity** — baseline in production for both fleets
-5. **Resilient Infrastructure, Clustering & Kubernetes** — two-node HA operational; third node and Kubernetes ahead
-6. **Systems Architecture** — future
-
-Details: [eugeneivanov.dev/roadmap](https://eugeneivanov.dev/roadmap)
-
----
-
 ## Principles
 
 - Automation after the manual phase, not instead of it — codifying a process you don't fully understand encodes the misunderstanding
 - Recovery is proven, not assumed — every backup layer restore-tested, failover verified by pulling power
 - Redundancy matched to the service — DNS fails over by protocol, most services by hypervisor HA; the failure mode picks the tool
 - Documentation is part of the work — decisions captured while the context is still fresh
-
----
-
-## Links
-
-- **Website:** [eugeneivanov.dev](https://eugeneivanov.dev)
-- **Infrastructure:** [eugeneivanov.dev/infra](https://eugeneivanov.dev/infra)
-- **Roadmap:** [eugeneivanov.dev/roadmap](https://eugeneivanov.dev/roadmap)
-- **Journal:** [eugeneivanov.dev/journal](https://eugeneivanov.dev/journal)
-- **LinkedIn:** [linkedin.com/in/eugeneivanov-dev](https://www.linkedin.com/in/eugeneivanov-dev)
