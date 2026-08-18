@@ -49,15 +49,15 @@ Raw journal: [journal/README.md](https://github.com/eugeneivanov-dev/infralab/bl
 
 ## Recent work
 
+- 2026-08-12 — Adopting a live Ubuntu fleet with Ansible: changed=0 across twelve hosts of both fleets
+- 2026-08-11 — Proving the Ansible baseline on a clean Ubuntu VM — and catching a real sshd bug the incremental path never could
+- 2026-08-10 — Writing Ansible roles for an Ubuntu Server baseline: fleet-prefixed roles, idempotency proven
 - 2026-08-03 — Auditing the Ubuntu fleet before Ansible touches it
 - 2026-08-02 — App services on Let's Encrypt: public certificates for internal names
 - 2026-08-02 — Attaching consumers to the internal CA: Proxmox, Synology, and device trust
 - 2026-08-02 — Building a private certificate authority with step-ca on RHEL
 - 2026-07-31 — Going public: opening the Ansible repo, decisions and mechanics
 - 2026-07-28..30 — Ansible Baseline, parts 1–6: from control node to adopting the live fleet
-- 2026-07-19 — Internal DNS: BIND primary/secondary on RHEL
-- 2026-06-27 — When a node reinstall resurfaced an old NIC hang — and HA caught it
-- 2026-06-22 — Two-node Proxmox HA with ZFS replication and a verified failover
 
 Full chronology: [eugeneivanov.dev/journal](https://eugeneivanov.dev/journal)
 
