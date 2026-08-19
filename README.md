@@ -49,6 +49,7 @@ Raw journal: [journal/README.md](https://github.com/eugeneivanov-dev/infralab/bl
 
 ## Recent work
 
+- 2026-08-19 — Hugo on Cloudways: CI/CD with GitHub Actions
 - 2026-08-12 — Adopting a live Ubuntu fleet with Ansible: changed=0 across twelve hosts of both fleets
 - 2026-08-11 — Proving the Ansible baseline on a clean Ubuntu VM — and catching a real sshd bug the incremental path never could
 - 2026-08-10 — Writing Ansible roles for an Ubuntu Server baseline: fleet-prefixed roles, idempotency proven
