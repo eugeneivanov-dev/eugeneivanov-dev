@@ -24,7 +24,8 @@ Next up: identity and secrets services — FreeIPA, Keycloak, HashiCorp Vault.
 ## Hardware
 
 - 2 × Dell Pro Micro Plus (Intel Core Ultra 7, 64 GB RAM, dual NVMe) — cluster nodes
-- Synology RS1221+ rack NAS, APC rackmount UPS
+- Synology DS720+ NAS (backup target, QDevice); RS1221+ rack NAS (not yet in service)
+- APC rackmount UPS
 - UniFi: Dream Machine Pro Max, Pro Max 24 PoE, Enterprise 8 PoE, 2 × Lite 8 PoE, 2 × U7 Pro
 - 12U wall-mounted rack, structured Cat6 cabling, patch panel
 
